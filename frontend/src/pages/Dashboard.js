@@ -1,6 +1,7 @@
 import React from 'react'
 import dp from '../assets/dp.jpg';
 import TableData from '../components/TableData';
+import EmailResponse from '../utils/modals/EmailResponse';
 const Dashboard = () => {
     return (
         <>
@@ -278,6 +279,7 @@ const Dashboard = () => {
                         >
                             <span class="dark:text-white">
                                 <TableData/>
+                                <EmailResponse/>
                             </span>
                         </div>
                     </div>

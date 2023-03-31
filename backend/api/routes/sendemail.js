@@ -4,57 +4,6 @@ const nodemailer = require('nodemailer');
 const MailGen = require('mailgen')
 
 router.post('/', (req, res, next) => {
-    // let config = {
-    //     service: 'gmail',
-    //     auth: {
-    //         user: 'iamsamir855@gmail.com',
-    //         pass: 'ewdmdtkwzalyquzf'
-    //     }
-    // }
-
-    // let transpoter = nodemailer.createTransport(config)
-
-    // let MailGenerator = new MailGen({
-    //     theme: "default",
-    //     product: {
-    //         name: "Mailgen",
-    //         link: 'https://mailgen.js/'
-    //     }
-    // })
-
-    // let response = {
-    //     body: {
-    //         name:"Samir",
-    //         intro: "Your Query answered",
-    //         table: {
-    //             data: [
-    //                 {
-    //                     item: "Nodemailer Stack book",
-    //                     description: "I am description"
-    //                 }
-    //             ]
-    //         },
-    //         outro: "Looking forward to "
-    //     }
-    // }
-
-    // let mail = MailGenerator.generate(response)
-    // let message = {
-    //     from: 'iamsamir855@gmai.com',
-    //     to: 'samiramrullah@gmail.com',
-    //     subject: "Testing",
-    //     html: mail
-    // }
-    // transpoter.sendMail(message)
-    //     .then(() => {
-    //         return res.status(201).json({
-    //             msg: "Mail recieved"
-    //         })
-    //     })
-    //     .catch(err => {
-    //         return res.status(500).json({ err })
-    //     })
-
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 465,
