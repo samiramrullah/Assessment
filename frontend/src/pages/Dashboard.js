@@ -1,5 +1,6 @@
 import React from 'react'
 import dp from '../assets/dp.jpg';
+import TableData from '../components/TableData';
 const Dashboard = () => {
     return (
         <>
@@ -276,7 +277,7 @@ const Dashboard = () => {
                             class="flex h-[80vh] items-center justify-center rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"
                         >
                             <span class="dark:text-white">
-                                lorem
+                                <TableData/>
                             </span>
                         </div>
                     </div>

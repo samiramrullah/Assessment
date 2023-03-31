@@ -31,4 +31,19 @@ router.post('/', (req, res, next) => {
     }
 });
 
+router.get('/',(req,res,next)=>{
+    try {
+        userSchema.find({})
+        .exec()
+        .then((doc)=>res.status(200).json({
+            doc
+        }))
+        .catch(err=>res.status(400).json({
+            message:"No data Found"
+        }))
+    } catch (error) {
+        
+    }
+})
+
 module.exports = router;
