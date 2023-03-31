@@ -1,37 +1,42 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import QuestionImage from '../assets/questionImage.jpg'
-
+import React from 'react'
+import WrapperComponent from '../components/WrapperComponent'
 const Contact = () => {
     return (
-        <div className='m-auto mt-48 ml-96'>
-            <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                    sx={{ height: 200 }}
-                    image={QuestionImage}
-                    title="Question"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
-                </CardActions>
-            </Card>
+        <WrapperComponent>
+            <section class="py-16 pt-36 bg-stone-100 font-poppins dark:bg-gray-800">
+                <div
+                    class="max-w-4xl px-4 py-4 mx-auto bg-white border shadow-sm dark:border-gray-900 dark:bg-gray-900 lg:py-4 md:px-6">
+                    <div class="mb-10 ">
+                        <h2 class="pb-2 mb-2 text-xl font-bold text-gray-800 md:text-3xl dark:text-gray-300">
+                            Hello
+                        </h2>
+                        <p class="text-sm dark:text-gray-400">
+                            Fill your details and message
+                        </p>
+                    </div>
+                    <form >
+                        <div class="mb-6">
+                            <label for="" class="block mb-2 text-sm font-medium dark:text-gray-400">Full Name</label>
+                            <input type="text"
+                                class="block w-full px-4 py-3 mb-2 text-sm bg-gray-100 border rounded dark:placeholder-gray-400 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800"
+                                placeholder="Full name...." required />
+                        </div>
+                        <div class="mb-6">
+                            <label for="" class="block mb-2 text-sm font-medium dark:text-gray-400">Email</label>
+                            <input type="email" placeholder="abc@gmail.com" required
+                                class="block w-full px-4 py-3 mb-3 leading-tight placeholder-gray-400 bg-gray-100 border rounded ark:border-gray-800 dark:bg-gray-800 dark:placeholder-gray-500 dark:text-gray-400 dark:border-gray-800 " />
+                        </div>
+                        <div class="mb-6">
+                            <label for="" class="block mb-2 text-sm font-medium dark:text-gray-400">Message</label>
+                            <textarea type="message" placeholder="Message.." required
+                                class="block w-full px-4 py-6 leading-tight placeholder-gray-400 bg-gray-100 border rounded dark:placeholder-gray-400 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800 "></textarea>
+                        </div>
+                        <button class="px-4 py-2 text-base text-gray-100 bg-blue-600 rounded hover:bg-blue-500">Send</button>
 
-        </div>
+                    </form>
+                </div>
+            </section >
+        </WrapperComponent >
     )
 }
 
