@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 
 // Routes import
 const userRoutes = require('./api/routes/user')
-
+const emailRoutes=require('./api/routes/sendemail')
 
 
 
@@ -40,6 +40,7 @@ app.use((req, res, next) => {
 
 // Routes used
 app.use('/user', userRoutes)
+app.use('/sendemail',emailRoutes);
 
 //Error handeling
 //if no paths matched
