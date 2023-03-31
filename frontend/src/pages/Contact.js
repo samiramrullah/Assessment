@@ -1,19 +1,29 @@
 import React from 'react'
 import { useState } from 'react'
 import WrapperComponent from '../components/WrapperComponent'
+import axios from 'axios'
 const Contact = () => {
-    const [fullName,setFullName]=useState('')
+    const [name,setName]=useState('')
     const [email,setEmail]=useState("")
     const [message,setMessage]=useState("")
 
     const submitHandler=(e)=>{
         e.preventDefault();
         const data={
-            fullName,
+            name,
             email,
             message
         }
-        console.log(data);
+        axios.post('http://localhost:5000/user',data)
+        .then((res)=>{
+            alert("Message sent")
+            setName('')
+            setEmail('')
+            setMessage('')
+        })
+        .catch((err)=>console.log(err))
+
+        
     }
     return (
         <WrapperComponent>
@@ -33,8 +43,8 @@ const Contact = () => {
                             <label  class="block mb-2 text-sm font-medium dark:text-gray-400">Full Name</label>
                             <input type="text"
                                 class="block w-full px-4 py-3 mb-2 text-sm bg-gray-100 border rounded dark:placeholder-gray-400 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800"
-                                placeholder="Full name...." required onChange={(e)=>setFullName(e.target.value)}
-                                value={fullName}/>
+                                placeholder="Full name...." required onChange={(e)=>setName(e.target.value)}
+                                value={name}/>
                         </div>
                         <div class="mb-6">
                             <label  class="block mb-2 text-sm font-medium dark:text-gray-400">Email</label>
