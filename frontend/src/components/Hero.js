@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Hero = () => {
     return (
         <section
@@ -31,15 +30,15 @@ const Hero = () => {
                             href="1"
                             class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                         >
-                            Get Started
+                            Join Now
                         </a>
 
-                        <a
+                        {/* <a
                             href="1"
                             class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
                         >
-                            Learn More
-                        </a>
+                            Join Now
+                        </a> */}
                     </div>
                 </div>
             </div>
