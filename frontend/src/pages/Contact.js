@@ -1,6 +1,20 @@
 import React from 'react'
+import { useState } from 'react'
 import WrapperComponent from '../components/WrapperComponent'
 const Contact = () => {
+    const [fullName,setFullName]=useState('')
+    const [email,setEmail]=useState("")
+    const [message,setMessage]=useState("")
+
+    const submitHandler=(e)=>{
+        e.preventDefault();
+        const data={
+            fullName,
+            email,
+            message
+        }
+        console.log(data);
+    }
     return (
         <WrapperComponent>
             <section class="py-16 pt-36 bg-stone-100 font-poppins dark:bg-gray-800">
@@ -14,25 +28,31 @@ const Contact = () => {
                             Fill your details and message
                         </p>
                     </div>
-                    <form >
+                    <form onSubmit={submitHandler}>
                         <div class="mb-6">
-                            <label for="" class="block mb-2 text-sm font-medium dark:text-gray-400">Full Name</label>
+                            <label  class="block mb-2 text-sm font-medium dark:text-gray-400">Full Name</label>
                             <input type="text"
                                 class="block w-full px-4 py-3 mb-2 text-sm bg-gray-100 border rounded dark:placeholder-gray-400 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800"
-                                placeholder="Full name...." required />
+                                placeholder="Full name...." required onChange={(e)=>setFullName(e.target.value)}
+                                value={fullName}/>
                         </div>
                         <div class="mb-6">
-                            <label for="" class="block mb-2 text-sm font-medium dark:text-gray-400">Email</label>
+                            <label  class="block mb-2 text-sm font-medium dark:text-gray-400">Email</label>
                             <input type="email" placeholder="abc@gmail.com" required
-                                class="block w-full px-4 py-3 mb-3 leading-tight placeholder-gray-400 bg-gray-100 border rounded ark:border-gray-800 dark:bg-gray-800 dark:placeholder-gray-500 dark:text-gray-400 dark:border-gray-800 " />
+                                class="block w-full px-4 py-3 mb-3 leading-tight placeholder-gray-400 bg-gray-100 border rounded ark:border-gray-800 dark:bg-gray-800 dark:placeholder-gray-500 dark:text-gray-400 dark:border-gray-800 " 
+                                value={email}
+                                onChange={(e)=>setEmail(e.target.value)}
+                                />
                         </div>
                         <div class="mb-6">
-                            <label for="" class="block mb-2 text-sm font-medium dark:text-gray-400">Message</label>
+                            <label  class="block mb-2 text-sm font-medium dark:text-gray-400">Message</label>
                             <textarea type="message" placeholder="Message.." required
-                                class="block w-full px-4 py-6 leading-tight placeholder-gray-400 bg-gray-100 border rounded dark:placeholder-gray-400 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800 "></textarea>
+                                class="block w-full px-4 py-6 leading-tight placeholder-gray-400 bg-gray-100 border rounded dark:placeholder-gray-400 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-800 "
+                                 value={message}
+                                 onChange={(e)=>setMessage(e.target.value)}
+                                />
                         </div>
-                        <button class="px-4 py-2 text-base text-gray-100 bg-blue-600 rounded hover:bg-blue-500">Send</button>
-
+                        <button type='submit' class="px-4 py-2 text-base text-gray-100 bg-blue-600 rounded hover:bg-blue-500">Send</button>
                     </form>
                 </div>
             </section >
