@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import EmailResponse from '../utils/modals/EmailResponse';
 const TableData = () => {
     const [allData,setAllData]=useState();
+    const [open, setOpen] = useState(false);
     useEffect(()=>{
        axios.get('http://localhost:5000/user')
        .then((res)=>setAllData(res.data?.doc))
@@ -25,7 +27,8 @@ const TableData = () => {
                             <td className="py-3 px-4 text-base text-gray-500 font-medium">{user.email}</td>
                             <td className="py-3 px-4 text-base text-gray-500 font-medium">{user.message}</td>
                             <td className="py-3 px-4 flex justify-around items-center space-x-6 text-base text-gray-700 font-medium">
-                                <button type="button" className="text-sm text-black font-semibold hover:text-blue-500">Reply</button>
+                                <button onClick={()=>setOpen(true)} type="button" className="text-sm text-black font-semibold hover:text-blue-500">Reply</button>
+                                {open&&<EmailResponse setOpen={setOpen} open={open}/>}
                             </td>
                         </tr>
                     ))
