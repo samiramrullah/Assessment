@@ -18,3 +18,5 @@
 
 
 # Instructions to Run the application
+1. clone the repositorie
+   (git clone git@github.com:samiramrullah/Assessment.git)
