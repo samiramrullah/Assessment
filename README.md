@@ -21,6 +21,14 @@
 1. clone the repositorie
    (git clone git@github.com:samiramrullah/Assessment.git)
 
-   I. First item cd frontend then
-      * npm install
+   I.  cd frontend then
+       * npm install
+
+   II. cd backend
+       * npm install
+
+## After cloning and installation
+* navigate to frontend -> run npm start
+* navigate to backend -> run npm start
+
    
