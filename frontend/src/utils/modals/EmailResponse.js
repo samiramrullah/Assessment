@@ -1,11 +1,11 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
-const EmailResponse = ({setOpen,open}) => {
+import axios from 'axios'
+const EmailResponse = ({setOpen,open,email}) => {
     const style = {
         position: 'absolute',
         top: '50%',
@@ -17,15 +17,22 @@ const EmailResponse = ({setOpen,open}) => {
         boxShadow: 24,
         p: 4,
     };
-    const [response, setResponse] = useState();
+    const [message, setMessage] = useState();
     const handleClose = () => setOpen(false);
     const emailSendHandler = (e) => {
         e.preventDefault();
-        setOpen(false)
+        const data={
+            email,
+            message,
+        }
+        console.log(data);
+        axios.post("http://localhost:5000/sendemail",data)
+        .then((res)=>{
+            alert('Message sent')
+            setOpen(false)
+        })
+       .catch((err)=>console.log(err))
     }
-    console.log('====================================');
-    console.log(open);
-    console.log('====================================');
     return (
         <div>
             <Modal
@@ -48,8 +55,8 @@ const EmailResponse = ({setOpen,open}) => {
                                 fullWidth
                                 rows={4}
                                 required
-                                value={response}
-                                onChange={(e) => setResponse(e.target.value)}
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
                             />
                         </Typography>
                         <button type='submit' class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">

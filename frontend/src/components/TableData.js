@@ -28,7 +28,7 @@ const TableData = () => {
                             <td className="py-3 px-4 text-base text-gray-500 font-medium">{user.message}</td>
                             <td className="py-3 px-4 flex justify-around items-center space-x-6 text-base text-gray-700 font-medium">
                                 <button onClick={()=>setOpen(true)} type="button" className="text-sm text-black font-semibold hover:text-blue-500">Reply</button>
-                                {open&&<EmailResponse setOpen={setOpen} open={open}/>}
+                                {open&&<EmailResponse setOpen={setOpen} open={open} email={user.email}/>}
                             </td>
                         </tr>
                     ))
