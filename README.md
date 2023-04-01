@@ -30,5 +30,3 @@
 ## After cloning and installation
 * navigate to frontend -> run npm start
 * navigate to backend -> run npm start
-
-   
