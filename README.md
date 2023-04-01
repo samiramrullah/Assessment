@@ -3,3 +3,18 @@
 2. User Will Fill The Contact Form and Data Will Store In Server
 3. In Dashboard Display The Data Collected by Contact From In Organised or inside the Table
 4. And add Quick Reply Button in Dashboard Panel Where Admin Can Reply To Users corresponding Email or Phone
+
+
+
+# Front-end
+  * React
+  * Tailwind Css
+  * material-ui
+
+# Back-end
+  * Node.js
+  * MongoDB
+  * Express
+
+
+# Instructions to Run the application
