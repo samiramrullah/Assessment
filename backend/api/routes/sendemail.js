@@ -11,8 +11,8 @@ router.post('/', (req, res, next) => {
             port: 465,
             secure: true, // true for 465, false for other ports
             auth: {
-                user: 'iamsamir855@gmail.com', // your email address
-                pass: 'ewdmdtkwzalyquzf', // your app generated password
+                user: '', // your email address
+                pass: '', // your app generated password          /
             },
         });
 
